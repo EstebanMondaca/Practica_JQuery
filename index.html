@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Practica con JQuery</title>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	
+	<style type="text/css">
+	#articulo-1{
+		font-size: 2em;
+	}
+	.articulo{
+		 background-color: #efefef;
+		 border: 1px solid #ccc;
+		 padding: 10px;
+	}
+	div{
+		box-shadow: 2px 2px 4px #000;
+	}
+	</style>
+
+	<script type="text/javascript">
+		//Selectores
+		$(document).ready(function(){ // document ready (DOmContentLoaded)
+			//ID
+			$('#articulo-1').css("color","red");
+			//Clase
+			$('.articulo').css("font-style","italic");
+			//Tag
+			$('p').css("border","1px dashed #000");
+		});
+	</script>
+</head>
+<body>
+	<div id="articulo-1" class="articulo">
+	<div class="title">	
+		<h2>Lorem ipsum dolor sit amet.</h2>
+	</div>
+	<div class="div descripcion">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur laboriosam dignissimos autem delectus, quas perspiciatis cum, recusandae debitis deserunt quisquam inventore culpa aliquam est doloremque sapiente, ipsa harum nihil tempore.</p>
+	</div>
+	</div>
+
+		<div id="articulo-2" class="articulo">
+	<div class="title">	
+		<h2>Lorem ipsum dolor sit amet.</h2>
+	</div>
+	<div class="div descripcion">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur laboriosam dignissimos autem delectus, quas perspiciatis cum, recusandae debitis deserunt quisquam inventore culpa aliquam est doloremque sapiente, ipsa harum nihil tempore.</p>
+	</div>
+	</div>
+</body>
+</html>

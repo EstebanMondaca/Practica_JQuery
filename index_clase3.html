@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" contant="width=device-width, initial-scale=1">
+	<title>Clase 3: Eventos</title>
+	<link rel ="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<section class="articles">
+					<h2>Sports</h2>
+					<article class="well">
+						<h3>News News</h3>	
+						<img src="img/testing/sports-1.jpg" class"img-responsive"alt="">
+						<a href="#" class="btn btn-primary show-description" data-visible="false">+</a>
+						<p class="hidden-summary">
+							Así lo confirmó a Emol el fiscal Sergio Moya, quien recalcó que del total de funcionarios cinco son oficiales
+						</p>
+					</article>
+
+					<article class="well">
+						<h3>News News</h3>	
+						<img src="img/testing/sports-2.jpg" class"img-responsive"alt="">
+						<a href="#" class="btn btn-primary show-description" data-visible="false">+</a>
+						<p class="hidden-summary">
+							Así lo confirmó a Emol el fiscal Sergio Moya, quien recalcó que del total de funcionarios cinco son oficiales
+						</p>
+					</article>
+				</section>		
+
+			</div>
+			<div class="col-md-6">
+					<section class="articles">
+					<h2>World</h2>
+					</section>
+
+				<section class="articles"></section>
+					<article class="well">
+						<h3>Jefa del Servicio Secreto renuncia tras fallas en seguridad de la Casa Blanca</h3>	
+						<img src="img/testing/people-1.jpg" class"img-responsive"alt="">
+						<a href="#" class="btn btn-primary show-description" data-visible="false">+</a>
+						<p class="hidden-summary">
+							Así lo confirmó a Emol el fiscal Sergio Moya, quien recalcó que del total de funcionarios cinco son oficiales
+						</p>
+					</article>
+
+					<article class="well">
+						<h3>Estado ecuatoriano ofrece disculpas a indígenas por violaciones a DD.HH.</h3>	
+						<img src="img/testing/people-2.jpg" class"img-responsive"alt="">
+						<a href="" class="btn btn-primary show-description" data-visible="false">+</a>
+						<p class="hidden-summary">
+							Así lo confirmó a Emol el fiscal Sergio Moya, quien recalcó que del total de funcionarios cinco son oficiales
+						</p>
+					</article>
+				
+			</div>
+		</div><!-- ends .row -->
+	</div>
+	
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+	<script type="text/javascript">
+		$(document).on('ready',function(){ //forma optimizada
+
+			$('article > a.btn').each(function(){
+				var $button = $(this);
+
+				$button.on('click', function(event){
+					event.preventDefault();
+
+					var visible = $button.data('visible');
+
+					if (visible){
+						$button.text('+');
+					}else{
+						$button.text('-');
+					}
+
+					$button.data('visible',!visible);
+
+				 //ignora la acción por defecto
+				$button.next().slideToggle('slow');
+			})
+			.on('mouseenter',function(event){ 
+				$button.addClass('btn-danger');
+			})
+			.on('mouseleave',function(event){
+					$button.removeClass('btn-danger');
+				
+			});
+		});
+
+			/*
+			// Esto código no es óptimo pues realiza tres iteraciones sobre la misma lista de objetos
+			$('article > a.btn').on('click', function(event){
+				event.preventDefault();
+				$(this).next().toggle('slow');
+			});
+
+			$('article > a.btn').on('mouseenter', function(event){
+				$(this).removeClass('btn-primary');
+				$(this).addClass('btn-danger');
+			});
+
+			$('article > a.btn').on('mouseleave', function(event){
+				$(this).removeClass('btn-danger');
+				$(this).addClass('btn-primary');
+			});
+			*/
+	});
+	</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+	<!-- Insert your HTML HERE -->
+	<div class="container">
+		<div class="row">	
+			<div class="col-md-12">
+				<section id="contents">
+					<article class="articulo well">
+						<h2> Lorem ipsum dolor sit amet, consectetur adipisicing elit. .</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni illum maxime, quo. Facilis magni, temporibus possimus repellendus nisi nulla qui, obcaecati optio doloremque similique nesciunt quam perferendis culpa quo, architecto!</p>
+						<a href="#" class="btn"> Read more</a>
+					</article>
+				</section>
+			</div>
+		</div>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+	<script>
+	var articles = [
+		{
+			"title" : "Sección 1",
+			"description" : "JAVA Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error consequatur, ratione quasi numquam cumque maxime eius qui ab saepe, adipisci totam nesciunt autem hic aspernatur voluptates laboriosam! Unde, facilis, officia."
+		},
+		{
+			"title" : "Sección 2",
+			"description" : ".NET Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam natus et, earum aliquid delectus distinctio, iusto labore reprehenderit possimus necessitatibus nisi officia eaque, nam enim dicta magni repudiandae eum consectetur."
+		},
+		{
+			"title" : "Sección 3"
+			
+		},
+		{
+			"title" : "Sección 4",
+			"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam natus et, earum aliquid delectus distinctio, iusto labore reprehenderit possimus necessitatibus nisi officia eaque, nam enim dicta magni repudiandae eum consectetur."
+			
+		}
+	];
+
+	//var x=10;
+		// la mejor forma de validar  (tips)
+		if (typeof x !== 'undefined') {
+		console.log(x);	 
+		};
+		
+
+	$(document).on('ready',function(){
+		$.each(articles,function(index, article){
+			var html_title = '<h2>' + article.title + '</h2>',
+				html_description = '<p>' + (typeof article.description !== 'undefined'? article.description : '') + '</p>';
+			$('<article/>', {
+				class: 'articulo well',
+				html : html_title + html_description + '<a href="#" class="btn"> Read more</a>'
+			}).appendTo('#contents');
+		});
+
+		//Declarar variable
+		var $contents = $('#contents'),
+			$children = $contents.children();
+		// first(), find(), addClass	
+			$children.first().find('a.btn').addClass('btn-danger');
+
+			$children
+				.first()
+				.next()
+					.children('h2')
+						.append('<span class="glyphicon glyphicon-pencil"></span>');
+
+			$children.last().children('a.btn').addClass('btn-primary');
+
+			//Penultimo element y el prepend agrega al principio el elemento
+			$children.last().prev().children('h2').prepend('<span class="glyphicon glyphicon-pencil"></span>');
+
+
+
+			//0,1,2 (zero -based)
+			$children.eq(2).children('p').addClass('bg-info padding');
+
+			$('.glyphicon').addClass('mini-padding');
+
+
+		//$('#contents').find('a.btn');
+		//$('#contents').children('a.btn');
+		//$('#contents').children().first();
+
+		//$contents.find('a.btn');
+		//$contents.children('a.btn');
+		//$contents.children().first();
+
+
+	});
+	</script>
+</body>
+</html>

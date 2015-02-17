@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+	<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Clase 4: Efectos</title>
+		<link rel ="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/base.css">
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1> Curso para todos!</h1>
+					<a href="#" id="show-courses" class="btn btn-primary">Mostrar/Ocultar</a>
+					<section id="courses" class="courses-list">
+						<h2>Próximos Cursos</h2>
+
+						<article class="course well">
+							<span class="glyphicon glyphicon-calendar"></span>
+							<time class="created-date" datetime="2014-01-17T19:07:51+00:00">January 27, 2014</time>
+							<div class="clearfix"></div>
+							<figure>
+								<img src="img/testing/drupal-logo.jpg" alt="Food5" class="img-resposive img-thumbnail">
+							</figure>
+							<h3 class="title">Drupa uno de los más increíbles CMS</h3>
+							<div class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ipsam facilis id, quia saepe rerum qui ad molestias iusto reprehenderit aperiam, molestiae provident tempore in quo sed suscipit, officiis dolorem.</div>
+						</article>
+
+						<article class="course well">
+							<span class="glyphicon glyphicon-calendar"></span>
+							<time class="created-date" datetime="2014-01-17T19:07:51+00:00">January 27, 2014</time>
+							<div class="clearfix"></div>
+							<figure>
+								<img src="img/testing/joomla-logo.png" alt="Food5" class="img-resposive img-thumbnail">
+							</figure>
+							<h3 class="title">Joomla CSM en evolución</h3>
+							<div class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ipsam facilis id, quia saepe rerum qui ad molestias iusto reprehenderit aperiam, molestiae provident tempore in quo sed suscipit, officiis dolorem.</div>
+						</article>
+
+						<article class="course well">
+							<span class="glyphicon glyphicon-calendar"></span>
+							<time class="created-date" datetime="2014-01-17T19:07:51+00:00">January 27, 2014</time>
+							<div class="clearfix"></div>
+							<figure>
+								<img src="img/testing/wordpress-logo.png" alt="Food5" class="img-resposive img-thumbnail">
+							</figure>
+							<h3 class="title">Wordpress uno de los Grande de los blogs</h3>
+							<div class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ipsam facilis id, quia saepe rerum qui ad molestias iusto reprehenderit aperiam, molestiae provident tempore in quo sed suscipit, officiis dolorem.</div>
+						</article>
+
+					</section>
+				</div>
+			</div>
+		</div>
+		
+
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+		
+		<script>
+		//Funciones anónimas
+		(function ($)
+		{
+			$(document).on('ready',function(){
+				$('#show-courses').on('click', onClickShowCourses)
+				function onClickShowCourses(){
+					$('#courses').animate({
+						height:"toggle",
+						width: "100%",
+						fontSize: "1.8em"
+					},
+					800,
+					function(){console.log("Animación finalizada...")})	
+				}
+			})
+			
+		})(jQuery);
+
+
+
+	//	(function(){
+	//		$(document).on('ready',function(){
+	//			alert("jQuery Ready")
+	//		});
+	//	});
+
+		//invocación
+		//console.log(suma(4,5))
+
+		</script>
+	</body>
+	</html>	
